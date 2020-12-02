@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
     } else if (body.error) {
       callback('Invalid location, please try again.')
     } else {
-      callback(undefined, body.current.weather_descriptions + '. It is currently ' + body.current.temperature + ' degrees out. It feels like ' + body.current.feelslike + ' degrees.')
+      callback('As of ' + body.current.observation_time + ': ' + body.current.weather_descriptions + '. It is currently ' + body.current.temperature + ' degrees out. It feels like ' + body.current.feelslike + ' degrees.')
     }
   })
 }
